@@ -1,0 +1,98 @@
+* {
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    position: relative;
+    height: 200px;
+    cursor: pointer;
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    object-fit: scale-down;
+    display: flex;
+    font-size: 48px;
+    transform: rotateY(180deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.card .back {
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    transform: rotateY(0deg);
+    transition: transform 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.card.flip .front {
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.card.flip .back {
+    transform: rotateY(0deg);
+}
+
+.attempts-container {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.attempts {
+    font-size: 24px;
+}
+
+.congratulations-container {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.congratulations {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+    background-color: #0a790a;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+
+.reset-game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.resetar {
+    background-color: dodgerblue;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.9;
+    padding: 1rem;
+    transition: 0.2s;
+}
